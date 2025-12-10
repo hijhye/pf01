@@ -47,6 +47,95 @@ introListCardAll.forEach((card, index) => {
   });
 });
 
+let skillGroup = document.querySelector(".skillGroup");
+let skillImgBoard = document.querySelector(".imgBoard");
+let skillTitle = document.querySelector(".skill .subTitle");
+skillReset();
+
+skillTitle.addEventListener("click", skillReset);
+function skillReset() {
+  skillImgBoard.innerHTML = ` <img src="https://skillicons.dev/icons?i=html"></img>
+        <img src="https://skillicons.dev/icons?i=css"></img>
+        <img src="https://skillicons.dev/icons?i=js"></img>
+        <img src="https://skillicons.dev/icons?i=react"></img>
+        <img src="https://skillicons.dev/icons?i=jquery"></img>
+        <img src="https://skillicons.dev/icons?i=firebase"></img>
+        <img src="https://skillicons.dev/icons?i=vscode"></img>
+        <img src="https://skillicons.dev/icons?i=git"></img>
+        <img src="https://skillicons.dev/icons?i=github"></img>
+        <img src="https://skillicons.dev/icons?i=figma"></img>
+        <img src="https://skillicons.dev/icons?i=ai"></img>
+        <img src="https://skillicons.dev/icons?i=ps"></img>
+        <img src="https://skillicons.dev/icons?i=pr"></img>`;
+
+  gsap.to(".imgBoard img", {
+    y: "300",
+    ease: "bounce.out",
+    scrollTrigger: {
+      trigger: ".imgBoard",
+      start: "top 60%",
+      end: "top 50%",
+      scrub: true,
+    },
+  });
+}
+
+let skillGroups = [
+  { ko: "기술", en: "skill" },
+  { ko: "도구", en: "tool" },
+  { ko: "디자인", en: "design" },
+];
+
+let skillDataAll = [
+  { group: "skill", text: "html" },
+  { group: "skill", text: "css" },
+  { group: "skill", text: "js" },
+  { group: "skill", text: "react" },
+  { group: "skill", text: "jquery" },
+  { group: "skill", text: "firebase" },
+  { group: "tool", text: "vscode" },
+  { group: "tool", text: "git" },
+  { group: "tool", text: "github" },
+  { group: "design", text: "figma" },
+  { group: "design", text: "ai" },
+  { group: "design", text: "ps" },
+  { group: "design", text: "pr" },
+];
+
+skillGroups.forEach((group) => {
+  skillGroup.innerHTML += `<li data-type="${group.en}">${group.ko}</li>`;
+});
+
+let skillGroupEl = document.querySelectorAll(".skillGroup li");
+
+skillGroupEl.forEach((list) => {
+  list.addEventListener("click", (e) => {
+    const type = e.target.dataset.type;
+    console.log(type);
+    skillGroupEl.forEach((list) => {
+      list.classList.remove("on");
+    });
+    list.classList.add("on");
+    let skillFilter = skillDataAll.filter((skillData) => {
+      return skillData.group == type;
+    });
+
+    let skillImgAll = "";
+    let skillImg;
+
+    skillFilter.forEach((skill) => {
+      skillImg = `<img src="https://skillicons.dev/icons?i=${skill.text}"></img>`;
+      skillImgAll += skillImg;
+    });
+    skillImgBoard.innerHTML = skillImgAll;
+
+    gsap.to(".imgBoard img", {
+      y: "300",
+      ease: "bounce.out",
+    });
+  });
+});
+
 let proj1Pre = document.querySelector("#proj1Pre");
 let proj1Next = document.querySelector("#proj1Next");
 let proj1SubT = document.querySelector("#proj1SubT");
@@ -286,10 +375,9 @@ document.addEventListener("mousemove", (e) => {
 
 let bubbles = document.querySelectorAll(".bubble");
 bubbles.forEach((bubble) => {
-  let randomX = Math.random() * 100;
-  let randomY = Math.random() * 100;
-  let randomScale = Math.random();
+  randomX = Math.random() * 100;
+  randomY = Math.random() * 100;
+  randomScale = Math.random();
   bubble.style.left = `${randomX}%`;
   bubble.style.top = `${randomY}%`;
-  bubble.style.transform = `scale(${randomScale})`;
 });
