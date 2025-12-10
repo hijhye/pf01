@@ -1,0 +1,421 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+ul {
+  list-style: none;
+}
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+img {
+  display: block;
+}
+@font-face {
+  font-family: "Presentation";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/2404@1.0/Freesentation-1Thin.woff2")
+    format("woff2");
+  font-weight: 100, 200, 300, 400, 500, 600, 700, 800, 900;
+  font-display: swap;
+}
+
+body {
+  width: 100%;
+  font-family: "Presentation";
+  cursor: none;
+}
+h2 {
+  font-size: 32px;
+  font-weight: 900;
+}
+
+h3 {
+  font-size: 48px;
+  font-weight: 500;
+}
+p {
+  font-size: 32px;
+}
+.cursor01,
+.cursor02,
+.cursor03,
+.cursor04 {
+  position: fixed;
+  width: 30px;
+  z-index: 50;
+  pointer-events: none;
+  display: none;
+}
+.cursor01 img,
+.cursor02 img,
+.cursor03 img,
+.cursor04 img {
+  width: 100%;
+}
+header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 5%;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  z-index: 30;
+}
+nav ul {
+  display: flex;
+  gap: 20px;
+}
+nav li {
+  cursor: pointer;
+}
+.subTitle {
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.intro {
+  width: 100%;
+  height: 100vh;
+  margin: 0px auto;
+  padding: 10% 5%;
+  box-sizing: border-box;
+  text-align: center;
+}
+#introSubTitle {
+  font-weight: bold;
+}
+#introTextBoard {
+  margin-top: 100px;
+}
+#introTextBoard li {
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0));
+  width: 80%;
+  margin: 10px auto;
+  padding: 30px 100px;
+  box-sizing: border-box;
+  border-radius: 80px;
+  text-align: left;
+  height: 100px;
+
+  transition: 1s;
+}
+#introTextBoard h4 {
+  font-size: 30px;
+  margin-bottom: 50px;
+}
+#introTextBoard h4::after {
+  content: "";
+  width: 30px;
+  height: 10px;
+  background-color: #b0cae3;
+  display: block;
+  border-radius: 10px;
+  margin: 3px 0px;
+}
+#introTextBoard p {
+  opacity: 0;
+  transition: 0.7s;
+  max-height: 0px;
+  overflow: hidden;
+}
+#introTextBoard p.on {
+  opacity: 1;
+  max-height: 200px;
+  overflow: hidden;
+}
+
+.skill {
+  width: 100%;
+  height: 100vh;
+  margin: 0px auto;
+  padding: 5%;
+  box-sizing: border-box;
+  text-align: center;
+}
+.skill .subTitle ul {
+  display: flex;
+  justify-content: center;
+  border: 1px solid #000;
+  width: 350px;
+  margin: 30px auto;
+  border-radius: 40px;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: 600;
+}
+.skill .subTitle li {
+  width: 100px;
+  padding: 10px;
+}
+.skill .subTitle li.on {
+  background-color: #eee;
+  border-radius: 30px;
+}
+.proj1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  width: 90%;
+  height: 100vh;
+  margin: 0px auto;
+  padding: 5%;
+  box-sizing: border-box;
+}
+.proj1 ul {
+  width: 80%;
+  margin: 0px auto 10px;
+  display: flex;
+  justify-content: right;
+  gap: 10px;
+  margin-top: 10px;
+}
+.proj1 li {
+  font-size: 14px;
+  color: #aaa;
+  cursor: pointer;
+}
+.proj1 li.on {
+  color: #000;
+}
+.proj1 .main {
+  width: 100%;
+}
+.proj1 .main > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.proj1 i {
+  color: #ccc;
+  font-size: 50px;
+}
+.proj1 i:hover {
+  color: #333;
+}
+.proj1 .mainImage {
+  width: 80%;
+  margin: 0px auto;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+.proj1 .main img {
+  width: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+.proj1 .btnWrap {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 10px;
+  color: #fff;
+  display: none;
+  gap: 30px;
+}
+.proj1 button {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  font-family: "Presentation";
+}
+.proj1 .mainImage:hover .btnWrap {
+  display: flex;
+}
+.proj1 p {
+  margin-top: 20px;
+}
+
+.proj2 {
+  width: 90%;
+  height: 100vh;
+  margin: 0px auto;
+  padding: 5%;
+  box-sizing: border-box;
+  cursor: none;
+  text-align: center;
+}
+.proj2 ul {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  height: 80%;
+}
+.proj2 li {
+  border: 1px solid #000;
+  border-radius: 10px;
+  width: calc(100% / 5);
+  height: 100%;
+  position: relative;
+  transition: 1s;
+  overflow: hidden;
+}
+.proj2 li > div {
+  display: block;
+  height: 100%;
+}
+.textWrap {
+  height: 100%;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px;
+  box-sizing: border-box;
+  color: #fff;
+  text-shadow: 1px 1px 5px #333;
+}
+.proj2 li img {
+  position: absolute;
+  bottom: 100px;
+  right: 30px;
+}
+.proj2 li:hover > div {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.proj2 .btnWrap {
+  position: absolute;
+  width: 200px;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 10px;
+  color: #fff;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+.proj2 button {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 14px;
+  font-family: "Presentation";
+}
+
+.proj2 li:nth-child(1) {
+  background: url(img/20252025031853354840741554.jpg);
+  background-size: cover;
+}
+.proj2 li:nth-child(2) {
+  background: url(img/20252025082049725490983086.jpg);
+  background-size: cover;
+}
+.proj2 li:nth-child(3) {
+  background: url(img/0814_가구-수정.png);
+  background-size: cover;
+}
+.proj2 li:nth-child(4) {
+  background: url(img/0813_미술관시안.png);
+  background-size: cover;
+}
+.proj2 li:nth-child(5) {
+  background: url(img/메인페이지.png);
+  background-size: cover;
+}
+
+.proj4 {
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+  padding: 50px 5%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.proj4 h3 {
+  height: 50px;
+}
+.proj4 ul {
+  display: flex;
+}
+.proj4 li {
+  width: 500px;
+  height: 400px;
+  flex-shrink: 0;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: 0.5s;
+  margin: 100px 0px;
+  position: relative;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  perspective-origin: 100% 0%;
+  transform: perspective(800px) rotateY(-30deg);
+}
+
+.proj4 li div {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.proj4 h4 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+}
+.proj4 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 1200px) {
+  .proj2 ul {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .proj2 li {
+    width: 100%;
+    height: calc(100% / 5);
+  }
+}
+
+.outro {
+  width: 100%;
+  height: 100vh;
+  background: #015871;
+  position: relative;
+}
+.bubble {
+  position: absolute;
+  background: url(img/bubble.png);
+  width: 30px;
+  height: 30px;
+  background-size: cover;
+  animation: spin 5s infinite;
+}
+.bubble:nth-child(1) {
+  animation-delay: -1s;
+}
+.bubble:nth-child(2) {
+  animation-delay: 0s;
+}
+.bubble:nth-child(3) {
+  animation-delay: 1s;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(100deg) translate(0, 0);
+  }
+  50% {
+    transform: rotate(50deg);
+  }
+  100% {
+    transform: rotate(100deg);
+  }
+}

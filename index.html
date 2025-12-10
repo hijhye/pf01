@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>yooz</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
+      integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"
+      integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <div class="cursor01"><img src="img/cursor01.png" /></div>
+    <div class="cursor02"><img src="img/cursor02.png" /></div>
+    <div class="cursor03"><img src="img/cursor03.png" /></div>
+    <div class="cursor04"><img src="img/cursor04.png" /></div>
+    <header>
+      <h1>로고</h1>
+      <nav>
+        <ul>
+          <li>핵심역량</li>
+          <li>기술</li>
+          <li>프로젝트</li>
+          <li>크리에이티브</li>
+          <li>^_^</li>
+        </ul>
+      </nav>
+    </header>
+    <section class="intro">
+      <div class="subTitle">
+        <h2>핵심역량</h2>
+        <h3><span id="introSubTitle">아래의</span> 역량을 가지고 있습니다.</h3>
+      </div>
+      <ul id="introTextBoard"></ul>
+    </section>
+
+    <section class="skill">
+      <div class="subTitle">
+        <h2>기술</h2>
+        <h3>이런 기술을 사용할 수 있습니다.</h3>
+        <ul>
+          <li class="on">프론트엔드</li>
+          <li>라이브러리</li>
+          <li>디자인</li>
+        </ul>
+      </div>
+      <ul id="introTextBoard"></ul>
+    </section>
+
+    <section class="proj1">
+      <div class="subTitle">
+        <h2>프로젝트</h2>
+        <h3 id="proj1SubT"></h3>
+      </div>
+      <div class="main">
+        <ul>
+          <li>EV GAME</li>
+          <li>TODOO</li>
+          <li>WEATHER MOOD</li>
+          <li>LET'S MOVIE</li>
+        </ul>
+        <div>
+          <i id="proj1Pre" class="fa-solid fa-angle-left"></i>
+          <div class="mainImage">
+            <img id="proj1Img" src="" />
+            <div class="btnWrap">
+              <button>
+                <i class="fa-regular fa-file-lines"></i>기획서 보기
+              </button>
+              <button>
+                <a
+                  id="proj1siteLink"
+                  href="https://hijhye.github.io/EVgame/"
+                  target="_blank"
+                  ><i class="fa-solid fa-share-from-square"></i>사이트
+                  바로가기</a
+                >
+              </button>
+            </div>
+          </div>
+          <i id="proj1Next" class="fa-solid fa-angle-right"></i>
+        </div>
+        <p id="proj1Text"></p>
+      </div>
+    </section>
+
+    <section class="proj2">
+      <div class="subTitle">
+        <h2>프로젝트</h2>
+        <h3>publishing</h3>
+      </div>
+      <ul>
+        <li>
+          <div>
+            <div class="textWrap">
+              <div>
+                <h4>clone coding</h4>
+                <p>네오오토</p>
+              </div>
+              <div class="btnWrap">
+                <button>
+                  <i class="fa-regular fa-file-lines"></i>기획서 보기
+                </button>
+                <button>
+                  <a href="" target="_blank"
+                    ><i class="fa-solid fa-share-from-square"></i>사이트
+                    바로가기</a
+                  >
+                </button>
+              </div>
+              <p>2025.11</p>
+
+              <img src="https://skillicons.dev/icons?i=html,css,js&perline=1" />
+            </div>
+          </div>
+        </li>
+        <li>
+          <div>
+            <div class="textWrap">
+              <div>
+                <h4>clone coding</h4>
+                <p>더 플래티넘</p>
+              </div>
+              <div class="btnWrap">
+                <button>
+                  <i class="fa-regular fa-file-lines"></i>기획서 보기
+                </button>
+                <button>
+                  <a href="" target="_blank"
+                    ><i class="fa-solid fa-share-from-square"></i>사이트
+                    바로가기</a
+                  >
+                </button>
+              </div>
+              <p>2025.11</p>
+              <img src="https://skillicons.dev/icons?i=html,css,js&perline=1" />
+            </div>
+          </div>
+        </li>
+        <li>
+          <div>
+            <div class="textWrap">
+              <div>
+                <h4>design coding</h4>
+                <p>가구</p>
+              </div>
+              <div class="btnWrap">
+                <button>
+                  <i class="fa-regular fa-file-lines"></i>기획서 보기
+                </button>
+                <button>
+                  <a
+                    href="https://hijhye.github.io/designCoding01/"
+                    target="_blank"
+                    ><i class="fa-solid fa-share-from-square"></i>사이트
+                    바로가기</a
+                  >
+                </button>
+              </div>
+              <p>2025.07</p>
+              <img src="https://skillicons.dev/icons?i=html,css,js&perline=1" />
+            </div>
+          </div>
+        </li>
+        <li>
+          <div>
+            <div class="textWrap">
+              <div>
+                <h4>design coding</h4>
+                <p>미술관</p>
+              </div>
+              <div class="btnWrap">
+                <button>
+                  <i class="fa-regular fa-file-lines"></i>기획서 보기
+                </button>
+                <button>
+                  <a
+                    href="https://hijhye.github.io/designCoding02/"
+                    target="_blank"
+                    ><i class="fa-solid fa-share-from-square"></i>사이트
+                    바로가기</a
+                  >
+                </button>
+              </div>
+              <p>2025.08</p>
+              <img
+                src="https://skillicons.dev/icons?i=html,css,js,figma&perline=1"
+              />
+            </div>
+          </div>
+        </li>
+        <li>
+          <div>
+            <div class="textWrap">
+              <div>
+                <h4>design coding</h4>
+                <p>jPuppet</p>
+              </div>
+              <div class="btnWrap">
+                <button>
+                  <i class="fa-regular fa-file-lines"></i>기획서 보기
+                </button>
+                <button>
+                  <a href="" target="_blank"
+                    ><i class="fa-solid fa-share-from-square"></i>사이트
+                    바로가기</a
+                  >
+                </button>
+              </div>
+              <p>2025.10</p>
+              <img
+                src="https://skillicons.dev/icons?i=html,css,js,figma&perline=1"
+              />
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
+    <section class="proj4">
+      <div class="subTitle">
+        <h2>CREATIVE</h2>
+        <h3 id="proj4SubT"></h3>
+      </div>
+      <div class="main">
+        <ul id="proj4ListBoard"></ul>
+      </div>
+      <p id="proj4Text"></p>
+    </section>
+
+    <section class="outro">
+      <div class="ocean">
+        <div class="wave"></div>
+        <div class="wave"></div>
+      </div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+    </section>
+    <script src="custom.js"></script>
+  </body>
+</html>
