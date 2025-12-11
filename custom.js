@@ -1,11 +1,12 @@
 gsap.registerPlugin(ScrollTrigger);
 
+//인트로
 let introSubTitle = document.querySelector("#introSubTitle");
 let introTextBoard = document.querySelector("#introTextBoard");
 
 let introList = [
   {
-    keyWord: "시각화 능력",
+    keyWord: "시각화",
     title: "흐름을 읽는 연출력",
     text: "영상/방송을 전공하며 익힌 시각적 스토리텔링 능력을 웹 개발에 접목했습니다. GSAP과 같은 라이브러리를 활용해 정적인 화면에 생동감을 불어넣고, 단순히 기능하는 웹을 넘어 사용자가 '경험'하는 웹을 구현하는 데 강점이 있습니다.",
   },
@@ -47,38 +48,10 @@ introListCardAll.forEach((card, index) => {
   });
 });
 
+//스킬
 let skillGroup = document.querySelector(".skillGroup");
 let skillImgBoard = document.querySelector(".imgBoard");
 let skillTitle = document.querySelector(".skill .subTitle");
-skillReset();
-
-skillTitle.addEventListener("click", skillReset);
-function skillReset() {
-  skillImgBoard.innerHTML = ` <img src="https://skillicons.dev/icons?i=html"></img>
-        <img src="https://skillicons.dev/icons?i=css"></img>
-        <img src="https://skillicons.dev/icons?i=js"></img>
-        <img src="https://skillicons.dev/icons?i=react"></img>
-        <img src="https://skillicons.dev/icons?i=jquery"></img>
-        <img src="https://skillicons.dev/icons?i=firebase"></img>
-        <img src="https://skillicons.dev/icons?i=vscode"></img>
-        <img src="https://skillicons.dev/icons?i=git"></img>
-        <img src="https://skillicons.dev/icons?i=github"></img>
-        <img src="https://skillicons.dev/icons?i=figma"></img>
-        <img src="https://skillicons.dev/icons?i=ai"></img>
-        <img src="https://skillicons.dev/icons?i=ps"></img>
-        <img src="https://skillicons.dev/icons?i=pr"></img>`;
-
-  gsap.to(".imgBoard img", {
-    y: "300",
-    ease: "bounce.out",
-    scrollTrigger: {
-      trigger: ".imgBoard",
-      start: "top 60%",
-      end: "top 50%",
-      scrub: true,
-    },
-  });
-}
 
 let skillGroups = [
   { ko: "기술", en: "skill" },
@@ -105,37 +78,184 @@ let skillDataAll = [
 skillGroups.forEach((group) => {
   skillGroup.innerHTML += `<li data-type="${group.en}">${group.ko}</li>`;
 });
-
 let skillGroupEl = document.querySelectorAll(".skillGroup li");
 
+skillReset();
+
+function skillReset() {
+  renderIcons(skillDataAll);
+}
+
+function renderIcons(data) {
+  let skillImgAll = "";
+  data.forEach((skill) => {
+    skillImgAll += `<img class="skill-icon" src="https://skillicons.dev/icons?i=${skill.text}" alt="${skill.text}">`;
+  });
+
+  skillImgBoard.innerHTML = skillImgAll;
+
+  dropIcons();
+}
+
+// GSAP 낙하 애니메이션 함수 (핵심!)
+function dropIcons() {
+  // 기존 애니메이션이 있다면 중지 (버그 방지)
+  gsap.killTweensOf(".skill-icon");
+
+  gsap.fromTo(
+    ".skill-icon",
+    {
+      y: -500,
+      opacity: 0,
+      rotation: () => gsap.utils.random(-180, 180),
+      scale: () => gsap.utils.random(0.5, 1.5),
+    },
+    {
+      y: 0,
+      opacity: 1,
+      rotation: () => gsap.utils.random(-15, 15),
+      scale: 1,
+      duration: 0.3,
+      ease: "bounce.out",
+      stagger: {
+        amount: 1,
+        from: "random",
+      },
+    }
+  );
+}
+
+// 3. 버튼 클릭 이벤트
 skillGroupEl.forEach((list) => {
   list.addEventListener("click", (e) => {
-    const type = e.target.dataset.type;
-    console.log(type);
-    skillGroupEl.forEach((list) => {
-      list.classList.remove("on");
-    });
-    list.classList.add("on");
+    // 버튼 스타일 활성화
+    skillGroupEl.forEach((item) => item.classList.remove("on"));
+    e.currentTarget.classList.add("on");
+
+    const type = e.currentTarget.dataset.type;
+
+    // 데이터 필터링
     let skillFilter = skillDataAll.filter((skillData) => {
       return skillData.group == type;
     });
 
-    let skillImgAll = "";
-    let skillImg;
-
-    skillFilter.forEach((skill) => {
-      skillImg = `<img src="https://skillicons.dev/icons?i=${skill.text}"></img>`;
-      skillImgAll += skillImg;
-    });
-    skillImgBoard.innerHTML = skillImgAll;
-
-    gsap.to(".imgBoard img", {
-      y: "300",
-      ease: "bounce.out",
-    });
+    // 필터링된 데이터로 다시 렌더링 및 애니메이션
+    renderIcons(skillFilter);
   });
 });
 
+// 4. 타이틀 클릭 시 리셋
+skillTitle.addEventListener("click", () => {
+  skillGroupEl.forEach((list) => list.classList.remove("on"));
+  skillReset();
+});
+
+// let skillGroup = document.querySelector(".skillGroup");
+// let skillImgBoard = document.querySelector(".imgBoard");
+// let skillTitle = document.querySelector(".skill .subTitle");
+// skillReset();
+
+// function skillReset() {
+//   skillImgBoard.innerHTML = ` <img src="https://skillicons.dev/icons?i=html"></img>
+//         <img src="https://skillicons.dev/icons?i=css"></img>
+//         <img src="https://skillicons.dev/icons?i=js"></img>
+//         <img src="https://skillicons.dev/icons?i=react"></img>
+//         <img src="https://skillicons.dev/icons?i=jquery"></img>
+//         <img src="https://skillicons.dev/icons?i=firebase"></img>
+//         <img src="https://skillicons.dev/icons?i=vscode"></img>
+//         <img src="https://skillicons.dev/icons?i=git"></img>
+//         <img src="https://skillicons.dev/icons?i=github"></img>
+//         <img src="https://skillicons.dev/icons?i=figma"></img>
+//         <img src="https://skillicons.dev/icons?i=ai"></img>
+//         <img src="https://skillicons.dev/icons?i=ps"></img>
+//         <img src="https://skillicons.dev/icons?i=pr"></img>`;
+
+//   gsap.to(".imgBoard img", {
+//     y: "300",
+//     opacity: 1,
+//     stagger: 0.1,
+//     scrollTrigger: {
+//       trigger: ".imgBoard",
+//       start: "top 60%",
+//       end: "top 50%",
+//     },
+//   });
+// }
+
+// let skillGroups = [
+//   { ko: "기술", en: "skill" },
+//   { ko: "도구", en: "tool" },
+//   { ko: "디자인", en: "design" },
+// ];
+
+// let skillDataAll = [
+//   { group: "skill", text: "html" },
+//   { group: "skill", text: "css" },
+//   { group: "skill", text: "js" },
+//   { group: "skill", text: "react" },
+//   { group: "skill", text: "jquery" },
+//   { group: "skill", text: "firebase" },
+//   { group: "tool", text: "vscode" },
+//   { group: "tool", text: "git" },
+//   { group: "tool", text: "github" },
+//   { group: "design", text: "figma" },
+//   { group: "design", text: "ai" },
+//   { group: "design", text: "ps" },
+//   { group: "design", text: "pr" },
+// ];
+
+// skillGroups.forEach((group) => {
+//   skillGroup.innerHTML += `<li data-type="${group.en}">${group.ko}</li>`;
+// });
+
+// let skillGroupEl = document.querySelectorAll(".skillGroup li");
+
+// skillGroupEl.forEach((list) => {
+//   list.addEventListener("click", (e) => {
+//     skillGroupEl.forEach((list) => {
+//       list.classList.remove("on");
+//     });
+//     list.classList.add("on");
+
+//     skillGroupEl.forEach((list) => {
+//       list.classList.remove("on");
+//     });
+
+//     list.classList.add("on");
+//     const type = e.target.dataset.type;
+//     console.log(type);
+
+//     let skillFilter = skillDataAll.filter((skillData) => {
+//       return skillData.group == type;
+//     });
+
+//     let skillImgAll = "";
+//     let skillImg;
+
+//     skillFilter.forEach((skill) => {
+//       skillImg = `<img src="https://skillicons.dev/icons?i=${skill.text}"></img>`;
+//       skillImgAll += skillImg;
+//     });
+//     skillImgBoard.innerHTML = skillImgAll;
+
+//     gsap.to(".imgBoard img", {
+//       y: "300",
+//       opacity: 1,
+//       stagger: 0.1,
+//       scrollTrigger: {
+//         trigger: ".imgBoard",
+//         start: "top 60%",
+//         end: "top 50%",
+//       },
+//     });
+//   });
+// });
+// skillTitle.addEventListener("click", () => {
+//   skillReset();
+//   skillGroupEl.forEach((list) => {
+//     list.classList.remove("on");
+//   });
+// });
 let proj1Pre = document.querySelector("#proj1Pre");
 let proj1Next = document.querySelector("#proj1Next");
 let proj1SubT = document.querySelector("#proj1SubT");
@@ -326,7 +446,7 @@ gsap.to("#proj4ListBoard", {
   x: "-1500px",
   scrollTrigger: {
     trigger: ".proj4",
-    start: "top 10%",
+    start: "top top",
     end: "+200%",
     scrub: 3,
     pin: true,
@@ -346,6 +466,8 @@ document.addEventListener("mousemove", (e) => {
 
   if (
     e.target.closest("header") ||
+    e.target.closest(".introtitle") ||
+    e.target.closest(".intro00") ||
     e.target.closest(".intro") ||
     e.target.closest(".skill")
   ) {
@@ -358,7 +480,7 @@ document.addEventListener("mousemove", (e) => {
     activeCursor = cursor02;
   } else if (e.target.closest(".proj4")) {
     activeCursor = cursor03;
-  } else if (e.target.closest(".outro")) {
+  } else if (e.target.closest(".outro") || e.target.closest("footer")) {
     activeCursor = cursor04;
   }
 

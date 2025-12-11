@@ -19,11 +19,22 @@ img {
   font-weight: 100, 200, 300, 400, 500, 600, 700, 800, 900;
   font-display: swap;
 }
-
+@font-face {
+  font-family: "BagelFat";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_JAMO@1.0/BagelFatOne-Regular.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-display: swap;
+}
 body {
   width: 100%;
   font-family: "Presentation";
   cursor: none;
+  position: relative;
+  line-height: 1.4;
+}
+body::-webkit-scrollbar {
+  display: none;
 }
 h2 {
   font-size: 32px;
@@ -76,6 +87,79 @@ nav li {
   width: 100%;
 }
 
+.bg-video {
+  font-family: "BagelFat";
+  color: #fff;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+.bg-video__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.intro00 {
+  width: 100%;
+  height: 100vh;
+  margin: 0px auto;
+  padding: 10%;
+  box-sizing: border-box;
+  background: linear-gradient(#3586c4, rgba(53, 134, 196, 0));
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.intro00 h2 {
+  font-size: 70px;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+.intro00 strong {
+  font-weight: 900;
+}
+
+.intro00 .imgWrap {
+  width: 400px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+.intro00 img {
+  animation: updown 15s infinite linear;
+}
+.intro00 img:nth-child(1) {
+  width: 200px;
+  animation-delay: -10s;
+}
+.intro00 img:nth-child(2) {
+  width: 200px;
+  animation-delay: -8s;
+}
+.intro00 img:nth-child(3) {
+  width: 400px;
+}
+@keyframes updown {
+  0% {
+    transform: scale(1) translateY(100px);
+  }
+  50% {
+    transform: scale(1.1) translateY(0px);
+  }
+  100% {
+    transform: scale(1) translateY(100px);
+  }
+}
 .intro {
   width: 100%;
   height: 100vh;
@@ -150,22 +234,26 @@ nav li {
   width: 100px;
   padding: 10px;
 }
-.skill .subTitle li.on {
+.skillGroup li.on {
   background-color: #eee;
   border-radius: 30px;
 }
 .skill .imgBoard {
   display: flex;
   justify-content: center;
+
   width: 60%;
+  height: 60%;
   margin: 0px auto;
-  flex-wrap: wrap;
+  flex-wrap: wrap-reverse;
   gap: 20px;
+  overflow: hidden;
 }
 .imgBoard img {
   width: 100px;
   transform: translateY(0px);
   transition: 1s;
+  opacity: 0;
 }
 .proj1 {
   display: flex;
@@ -176,7 +264,7 @@ nav li {
   width: 90%;
   height: 100vh;
   margin: 0px auto;
-  padding: 5%;
+  padding: 100px 5%;
   box-sizing: border-box;
 }
 .proj1 ul {
@@ -251,7 +339,7 @@ nav li {
   width: 90%;
   height: 100vh;
   margin: 0px auto;
-  padding: 5%;
+  padding: 100px 5%;
   box-sizing: border-box;
   cursor: none;
   text-align: center;
@@ -337,11 +425,19 @@ nav li {
   background-size: cover;
 }
 
+.proj3 {
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+  padding: 100px 5%;
+  box-sizing: border-box;
+}
+
 .proj4 {
   text-align: center;
   width: 100%;
   height: 100vh;
-  padding: 50px 5%;
+  padding: 100px 5%;
   box-sizing: border-box;
   overflow: hidden;
 }
@@ -401,16 +497,26 @@ nav li {
 .outro {
   width: 100%;
   height: 100vh;
-  background: #015871;
+  background: linear-gradient(
+    rgba(151, 191, 221, 0),
+    rgb(151, 191, 221) 10%,
+    #0068b3 40%,
+    #002d4d
+  );
   color: #fff;
   text-align: center;
   position: relative;
 }
-footer {
+.outro .text {
+  height: 90%;
   display: flex;
-  width: 100%;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
 }
+.outro h2 {
+  font-size: 80px;
+}
+
 .bubble {
   position: absolute;
   background: url(img/bubble.png);
@@ -438,4 +544,15 @@ footer {
   100% {
     transform: rotate(100deg);
   }
+}
+footer {
+  display: flex;
+  width: 100%;
+  padding: 30px;
+  box-sizing: border-box;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 0;
+  color: #fff;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
 }
