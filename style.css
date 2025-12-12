@@ -86,7 +86,9 @@ nav li {
   margin-bottom: 30px;
   width: 100%;
 }
-
+.introtitle {
+  transition: 1s;
+}
 .bg-video {
   font-family: "BagelFat";
   color: #fff;
@@ -240,17 +242,16 @@ nav li {
 }
 .skill .imgBoard {
   display: flex;
+  flex-wrap: wrap-reverse;
+  align-items: flex-start;
   justify-content: center;
-
   width: 60%;
   height: 60%;
   margin: 0px auto;
-  flex-wrap: wrap-reverse;
   gap: 20px;
-  overflow: hidden;
 }
 .imgBoard img {
-  width: 100px;
+  width: 150px;
   transform: translateY(0px);
   transition: 1s;
   opacity: 0;
