@@ -1,5 +1,14 @@
 gsap.registerPlugin(ScrollTrigger);
-
+gsap.to(".scroll div", {
+  height: "100%",
+  trigger: "body",
+  scrollTrigger: {
+    start: "top top",
+    end: "bottom top",
+    scrub: true,
+    markers: false,
+  },
+});
 //인트로
 let introSubTitle = document.querySelector("#introSubTitle");
 let introTextBoard = document.querySelector("#introTextBoard");
@@ -331,6 +340,8 @@ proj4List.forEach((item) => {
 proj4ListBoard.innerHTML = card;
 
 let proj4ListAll = document.querySelectorAll("#proj4ListBoard li");
+let proj4Listbg = document.querySelectorAll("#proj4ListBoard li div");
+let proj4ListText = document.querySelectorAll("#proj4ListBoard li h4");
 let totalCards = proj4ListAll.length;
 
 console.log(proj4ListAll);
@@ -341,9 +352,18 @@ proj4ListAll.forEach((item, index) => {
     proj4Text.textContent = `${proj4List[index].text}`;
     item.style.transform =
       "perspective(800px) rotateY(-30deg) translateY(-100px)";
+    proj4Listbg[index].style.backgroundColor = "rgba(0,0,0,0)";
+    proj4ListText[index].style.opacity = "0";
   });
+
   item.addEventListener("mouseleave", () => {
     item.style.transform = "perspective(800px) rotateY(-30deg) translateY(0px)";
+    proj4Listbg.forEach((bg) => {
+      bg.style.backgroundColor = "rgba(0,0,0,0.5)";
+    });
+    proj4ListText.forEach((text) => {
+      text.style.opacity = "1";
+    });
   });
 });
 

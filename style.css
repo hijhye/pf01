@@ -54,7 +54,7 @@ p {
 .cursor04 {
   position: fixed;
   width: 30px;
-  z-index: 50;
+  z-index: 500;
   pointer-events: none;
   display: none;
 }
@@ -63,6 +63,24 @@ p {
 .cursor03 img,
 .cursor04 img {
   width: 100%;
+}
+.scroll {
+  width: 5px;
+  height: 30vh;
+  background-color: rgba(0, 0, 0, 0);
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 30px;
+  z-index: 0;
+  border-radius: 10px;
+  border: 1px solid rgba(75, 121, 161, 0.3);
+}
+.scroll div {
+  width: 100%;
+  height: 0px;
+  background: linear-gradient(to bottom, #4b79a1, #283e51);
+  border-radius: 10px;
 }
 header {
   width: 100%;
@@ -484,6 +502,20 @@ nav li {
 .proj4 h3 {
   height: 50px;
 }
+@font-face {
+  font-family: "SeoulNotice";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/2505-1@1.0/SeoulAlrimTTF-Medium.woff2")
+    format("woff2");
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: "HsJandari";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/2510-2@1.0/HSJandari.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-display: swap;
+}
 .proj4 ul {
   display: flex;
 }
@@ -510,12 +542,17 @@ nav li {
   background-color: rgba(0, 0, 0, 0.5);
 }
 .proj4 h4 {
+  font-family: "HsJandari";
+
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  bottom: 10px;
+  right: 10px;
   color: #fff;
+  font-size: 60px;
+  padding: 10px 20px;
+  border-radius: 10px;
 }
+
 .proj4 img {
   width: 100%;
   height: 100%;
