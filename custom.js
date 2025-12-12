@@ -1,8 +1,4 @@
 gsap.registerPlugin(ScrollTrigger);
-setInterval(() => {
-  let introtitle = document.querySelector(".introtitle");
-  introtitle.style.marginTop = "-100vh";
-}, 10000);
 
 //인트로
 let introSubTitle = document.querySelector("#introSubTitle");
