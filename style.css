@@ -113,7 +113,7 @@ nav li {
   margin: 0px auto;
   padding: 10%;
   box-sizing: border-box;
-  background: linear-gradient(#3586c4, rgba(53, 134, 196, 0));
+  background: linear-gradient(#3586c4 60%, rgba(53, 134, 196, 0));
   color: #fff;
   display: flex;
   justify-content: space-between;
