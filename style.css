@@ -89,6 +89,24 @@ nav li {
 .introtitle {
   transition: 1s;
 }
+
+.intro00 {
+  width: 100%;
+  height: 200vh;
+  margin: 0px auto;
+
+  background: linear-gradient(#3586c4 70%, rgba(53, 134, 196, 0));
+  color: #fff;
+}
+.intro00 .bg {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0) 80%, #3586c4 100%);
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+}
 .bg-video {
   font-family: "BagelFat";
   color: #fff;
@@ -101,25 +119,18 @@ nav li {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -1;
   height: 100%;
   width: 100%;
   object-fit: cover;
 }
 
-.intro00 {
-  width: 100%;
-  height: 100vh;
-  margin: 0px auto;
-  padding: 10%;
-  box-sizing: border-box;
-  background: linear-gradient(#3586c4 60%, rgba(53, 134, 196, 0));
-  color: #fff;
+.intro00 .text {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 10%;
+  box-sizing: border-box;
 }
-
 .intro00 h2 {
   font-size: 70px;
   font-weight: 400;
