@@ -365,7 +365,6 @@ let proj4List = [
     subTitle: "캐릭터 디자인",
     text: "캐릭터 컨셉을 기획하고 디자인하여 컵을 제작했습니다.",
     imgsrc: "img/character.png",
-    a: "https://blog.naver.com/elroi_official/223958736231",
   },
   {
     category: "디자인",
@@ -383,17 +382,33 @@ let proj4List = [
 
 let card = "";
 
+// proj4List.forEach((item) => {
+//   card += `
+//               <li>
+//               <a href="${item.a}" target="_blank">
+//               <div></div>
+//                 <h4>${item.category}</h4>
+//                 <img src="${item.imgsrc}">
+//                 </a>
+//               </li>
+//   `;
+// });
+
 proj4List.forEach((item) => {
+  const linkStart = item.a ? `<a href="${item.a}" target="_blank">` : "";
+  const linkEnd = item.a ? `</a>` : "";
+
   card += `
-              <li>
-              <a href="${item.a}" target="_blank">
-              <div></div>
-                <h4>${item.category}</h4>
-                <img src="${item.imgsrc}">
-                </a>
-              </li>
+    <li>
+      ${linkStart}
+        <div></div>
+        <h4>${item.category}</h4>
+        <img src="${item.imgsrc}">
+      ${linkEnd}
+    </li>
   `;
 });
+
 proj4ListBoard.innerHTML = card;
 
 let proj4ListAll = document.querySelectorAll("#proj4ListBoard li");
