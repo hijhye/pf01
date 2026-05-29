@@ -347,37 +347,18 @@ let proj4ListBoard = document.querySelector("#proj4ListBoard");
 let proj4Text = document.querySelector("#proj4Text");
 let proj4List = [
   {
-    category: "디자인",
-    subTitle: "생일축하해 포스터",
-    text: "일러스트 포스터를 디자인해 제작했습니다.",
-    imgsrc: "img/poster01.png",
+    category: "영상",
+    subTitle: "경상남도교육청 꿈이온",
+    text: "ai를 활용해 홈페이지 리뉴얼 홍보 영상을 제작했습니다.",
+    imgsrc: "https://img.youtube.com/vi/B0MjU1-WqG4/maxresdefault.jpg",
+    a: "https://youtu.be/B0MjU1-WqG4",
   },
   {
     category: "영상",
-    subTitle: "해커톤행사 스케치영상",
-    text: "3일간 진행된 해커톤 행사의 스케치영상을 제작했습니다.",
-    imgsrc: "img/video01.png",
-    a: "https://youtu.be/dgq8yacVRXI",
-  },
-  {
-    category: "영상",
-    subTitle: "마을기업 다큐멘터리",
-    text: "마을기업에 대한 이야기를 다큐멘터리로 제작했습니다.",
-    imgsrc: "img/video02.png",
-    a: "https://youtu.be/cATBJ2AIZKc",
-  },
-  {
-    category: "영상",
-    subTitle: "음악회 스케치영상",
-    text: "세계여행을 컨셉으로 진행된 음악회의 스케치영상을 제작했습니다.",
-    imgsrc: "img/video03.png",
-    a: "https://youtu.be/gYgi7DHwAG4",
-  },
-  {
-    category: "디자인",
-    subTitle: "생중계용 레이아웃 디자인",
-    text: "디스플레이 미래기술 포럼이라는 주제로 진행된 온오프라인 행사의 생중계용 레이아웃을 제작했습니다.",
-    imgsrc: "img/design01.png",
+    subTitle: "대전과학기술대학교 해커톤",
+    text: "스케치 영상을 제작했습니다.",
+    imgsrc: "https://img.youtube.com/vi/RbxesEFlNXM/maxresdefault.jpg",
+    a: "https://youtu.be/RbxesEFlNXM",
   },
   {
     category: "디자인",
@@ -385,6 +366,18 @@ let proj4List = [
     text: "캐릭터 컨셉을 기획하고 디자인하여 컵을 제작했습니다.",
     imgsrc: "img/character.png",
     a: "https://blog.naver.com/elroi_official/223958736231",
+  },
+  {
+    category: "디자인",
+    subTitle: "생일축하해 포스터",
+    text: "일러스트 포스터를 디자인해 제작했습니다.",
+    imgsrc: "img/poster01.png",
+  },
+  {
+    category: "디자인",
+    subTitle: "생중계용 레이아웃 디자인",
+    text: "디스플레이 미래기술 포럼이라는 주제로 진행된 온오프라인 행사의 생중계용 레이아웃을 제작했습니다.",
+    imgsrc: "img/design01.png",
   },
 ];
 

@@ -1,3 +1,6 @@
+body {
+  min-width: 1200px;
+}
 * {
   margin: 0px;
   padding: 0px;
@@ -482,11 +485,10 @@ nav li {
   gap: 30px;
 }
 .proj3 .imgBox {
-  width: 60%;
+  width: 100%;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 20px;
   overflow: hidden;
-  padding: 50px;
   box-sizing: border-box;
   position: relative;
 }
@@ -575,8 +577,8 @@ nav li {
   margin: 20px auto;
 }
 .proj4 li {
-  width: 500px;
-  height: 400px;
+  width: 400px;
+  height: 300px;
   flex-shrink: 0;
   border: 1px solid #ccc;
   border-radius: 20px;
